@@ -15,4 +15,4 @@ raw_marriage_data <-
   search_packages("Marriage Licence Statistics") %>% list_package_resources() %>% filter(row_number() == 1) %>% get_resource()
 
 #### Save data ####
-write.csv(raw_marriage_data, file = "raw_marriage_licences.csv", row.names = FALSE)
+write.csv(raw_marriage_data, file = "data/raw_data/raw_marriage_licences.csv", row.names = FALSE)

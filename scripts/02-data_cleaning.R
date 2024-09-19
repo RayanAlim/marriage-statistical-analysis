@@ -14,13 +14,14 @@ library(lubridate)
 #### Clean data ####
 raw_data <- read.csv("raw_marriage_licences.csv")
 
-clean_data <- raw_data %>%
-  separate(Date, into = c("Year", "Month", "Day"), sep = "-") %>%
-  mutate(Date = ymd(paste(Year, Month, Day, sep = "-"))) %>%
-  select(Date, Number_of_Licences)
-
-
+cleaned_data <-
+  raw_data |>
+  janitor::clean_names() |> 
+  separate(col = time_period,
+           into = c("year", "month"),
+           sep = "-") |> 
+  mutate(date = lubridate::ymd(paste(year, month, "01", sep = "-"))
+  )
 
 #### Save data ####
-write.csv(clean_data, file = "outputs/data/cleaned_marriage_licences.csv")
-
+write_csv(cleaned_data, "data/analysis_data/cleaned_marriage_licences.csv")

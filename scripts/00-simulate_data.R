@@ -25,4 +25,4 @@ marriage_data <-
              Number_of_Licences = number_of_licences)
 
 # Make a CSV file
-write.csv(marriage_data, file = "simulated_marriage_licences.csv", row.names = FALSE)
+write.csv(marriage_data, file = "data/simulated_marriage_licences.csv", row.names = FALSE)
