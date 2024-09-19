@@ -1,5 +1,5 @@
 ---
-title: "Marriage Licence Statistics in Toronto"
+title: "Analysis of Marriage Licenses in Toronto"
 author: "Rayan Awad Alim"
 thanks: "Code and data are available at: https://github.com/RayanAlim/marriage-statistical-analysis"
 date: today
@@ -23,16 +23,16 @@ library(ggplot2)
 
 In this paper, we used Marriage License Data from the Toronto Open Data portal @opendatatoronto and anlaysed the data using @citeR.
 
-# Data {#sec-data}
+# Data
 
-The data is gathered from the Open Data Toronto portal and cleaned to include relevant fields. We explorde the distribution of marriage licenses over time. The data is graphed in figure (@fig-marli). 
-
-## Data Analysis
+The data is gathered from the Open Data Toronto portal and cleaned to include relevant fields. We explode the distribution of marriage licenses over time. The data is graphed in figure (@fig-marli). 
 
 ```{r}
 #| label: fig-marli
 #| fig-cap: Graph of Marriage Licences Over Time
 #| echo: false
+#| warning: false
+
 
 cleaned_data <-
   read_csv(here::here("data/analysis_data/cleaned_marriage_licences.csv"))
@@ -41,7 +41,6 @@ ggplot(cleaned_data, aes(x = date, y = marriage_licenses, color = civic_centre))
   geom_line() +
   labs(title = "Marriage Licenses Over Time by Civic Centre", x = "Date", y = "Number of Licenses") +
   theme_minimal()
-
 ```
 
 \newpage
