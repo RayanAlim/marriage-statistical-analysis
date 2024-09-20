@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project analyzes marriage license statistics in Toronto from 2011 to 2013. We look at the trend over time and across different civic centres using data from Open Data Toronto.
+This analysis looks at marriage license data in Toronto from 2011 to 2013. Using data from Open Data Toronto, we look at the trend over time and across different civic centres in the cityy.
 
 ## Contents
 
@@ -18,7 +18,6 @@ This project analyzes marriage license statistics in Toronto from 2011 to 2013. 
 - R Packages:
   - `opendatatoronto`
   - `dplyr`
+  - `tidyverse`
   - `ggplot2`
-  - `lubridate`
   - `testthat`
-  - `quarto` (for rendering the document)
